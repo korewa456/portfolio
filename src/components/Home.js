@@ -39,7 +39,7 @@ const Home = React.forwardRef((props, ref) => {
               </a>
             </div>
           </div>
-          <div className="hero-img"></div>
+          <div className="hero-img !w-64 !h-64 md:!w-[24rem] md:!h-[24rem]"></div>
         </div>
         <hr className="m-2" />
         <div className="flex flex-col items-center">
