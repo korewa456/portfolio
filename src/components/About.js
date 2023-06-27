@@ -7,7 +7,7 @@ const About = React.forwardRef((props, ref) => {
   const [curPic, setCurPic] = useState(porin);
 
   return (
-    <section ref={ref} className="bg-slate-100 w-full">
+    <section ref={ref} className=" w-full">
       <div className="flex justify-center pt-20 mb-10">
         <h2 className="bg-slate-100 px-2 text-slate-700 uppercase tracking-wide text-2xl font-bold inline-block rounded shadow">
           ABOUT ME
