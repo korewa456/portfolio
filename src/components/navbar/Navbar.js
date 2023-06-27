@@ -42,7 +42,7 @@ export default function Navbar({ scrollToSection }) {
                     <li onClick={() => scrollToSection("projectRef")}>
                       <MenuItem item="Project" />
                     </li>
-                    <li>
+                    <li onClick={() => scrollToSection("contactRef")}>
                       <MenuItem item="Contact" />
                     </li>
                   </ul>
@@ -62,7 +62,7 @@ export default function Navbar({ scrollToSection }) {
               <li onClick={() => scrollToSection("projectRef")}>
                 <MenuItem item="Project" />
               </li>
-              <li>
+              <li onClick={() => scrollToSection("contactRef")}>
                 <MenuItem item="Contact" />
               </li>
             </ul>

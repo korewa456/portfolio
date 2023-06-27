@@ -16,8 +16,6 @@ function App() {
   const contactRef = useRef(null);
 
   const scrollToSection = (refName) => {
-    console.log(refName);
-    console.log(homeRef.current);
     if (refName === "homeRef" && homeRef.current) {
       window.scrollTo({
         top: homeRef.current.offsetTop,
@@ -28,9 +26,14 @@ function App() {
         top: aboutRef.current.offsetTop,
         behavior: "smooth",
       });
-    } else if (refName === "projectRef" && aboutRef.current) {
+    } else if (refName === "projectRef" && projectRef.current) {
       window.scrollTo({
         top: projectRef.current.offsetTop,
+        behavior: "smooth",
+      });
+    } else if (refName === "contactRef" && contactRef.current) {
+      window.scrollTo({
+        top: contactRef.current.offsetTop,
         behavior: "smooth",
       });
     }

@@ -1,18 +1,20 @@
 import React from "react";
 import EmailIcon from "@mui/icons-material/Email";
 
-export default function Contact() {
+const Contact = React.forwardRef((props, ref) => {
   return (
-    <section className="flex flex-col gap-10 justify-center items-center py-20">
+    <section
+      className="flex flex-col gap-10 justify-center items-center py-20"
+      ref={ref}
+    >
       <div className="flex justify-center pt-20">
         <h2 className="bg-slate-100 px-2 text-slate-700 uppercase tracking-wide text-2xl font-bold inline-block rounded shadow mb-10">
           Contact Me
         </h2>
       </div>
 
-      <h2 className="text-2xl font-semibold">
-        I am happy to talk, hit me up!👇
-      </h2>
+      <h2 className="text-2xl font-semibold">I am happy to talk</h2>
+      <h2 className="text-2xl font-semibold">hit me up!👇</h2>
       <a href="mailto: hungjen0816@gmail.com">
         <button
           type="button"
@@ -29,4 +31,6 @@ export default function Contact() {
       </a>
     </section>
   );
-}
+});
+
+export default Contact;
