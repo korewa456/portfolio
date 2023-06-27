@@ -2,6 +2,7 @@ const LogoData = [
   require("../Media/techstack/htmllogo.svg"),
   require("../Media/techstack/csslogo.svg"),
   require("../Media/techstack/javascriptlogo.svg"),
+  require("../Media/techstack/typescriptlogo.svg"),
   require("../Media/techstack/reactlogo.svg"),
   require("../Media/techstack/nextjslogo.svg"),
   require("../Media/techstack/nodejslogo.svg"),
