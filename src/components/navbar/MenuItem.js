@@ -10,7 +10,7 @@ export default function MenuItem(props) {
                 lg: p-1
                 rounded-full
                 border-2
-                border-white
+                md:border-white
                 hover:border-slate-300
                 transition
                 cursor-pointer
