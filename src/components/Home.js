@@ -3,20 +3,23 @@ import Container from "./Container";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LogoData from "./LogoData";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
-export default function Home() {
+const Home = React.forwardRef((props, ref) => {
   return (
-    <section className="pt-24 bg-slate-100 w-full">
+    <section ref={ref} className="pt-24 bg-slate-100 w-full">
       <Container>
         <div className="flex flex-col md:flex-row justify-center items-center gap-6">
           <div className="flex justify-center flex-col gap-3">
-            <h1 className="text-7xl font-semibold">Front-End React</h1>
-            <h1 className="text-7xl font-semibold">Developer</h1>
-            <h3 className="text-xl">
+            <h1 className="text-6xl font-semibold text-slate-700">
+              Front-End React
+            </h1>
+            <h1 className="text-6xl font-semibold text-slate-700">Developer</h1>
+            <h3 className="text-xl text-[#555]">
               Hi, I'm Hung Jen. A passionate Front-end React
             </h3>
-            <h3 className="text-xl">
-              Developer based in Irvine, California. 📍
+            <h3 className="text-xl text-[#555]">
+              Developer based in Irvine, California. <LocationOnIcon />
             </h3>
             <div className="flex gap-3">
               <a href="https://github.com/korewa456" target="_blank">
@@ -52,4 +55,6 @@ export default function Home() {
       </Container>
     </section>
   );
-}
+});
+
+export default Home;
