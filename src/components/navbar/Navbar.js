@@ -53,16 +53,16 @@ export default function Navbar({ scrollToSection }) {
               <ArrowForwardIosIcon fontSize="small" />
             </h1>
             <ul className="hidden md:flex flex-row gap-6">
-              <li onClick={() => scrollToSection("homeRef")}>
+              <li onClick={() => scrollToSection("home")}>
                 <MenuItem item="Home" />
               </li>
-              <li onClick={() => scrollToSection("aboutRef")}>
+              <li onClick={() => scrollToSection("about")}>
                 <MenuItem item="About" />
               </li>
-              <li onClick={() => scrollToSection("projectRef")}>
+              <li onClick={() => scrollToSection("project")}>
                 <MenuItem item="Project" />
               </li>
-              <li onClick={() => scrollToSection("contactRef")}>
+              <li onClick={() => scrollToSection("contact")}>
                 <MenuItem item="Contact" />
               </li>
             </ul>

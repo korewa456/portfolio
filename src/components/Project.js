@@ -26,8 +26,8 @@ const Project = React.forwardRef((props, ref) => {
             alt="airbnb-clone"
             className="w-[32rem] h-[20rem]  rounded-2xl border-4 shadow-md cursor-pointer hover:opacity-100:"
           />
-          <a href="https://rent-clone-navy.vercel.app/" target="_blank">
-            <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
+          <a href={props.demoLink} target="_blank">
+            <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsl(0,0%,99.4%,0.4)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
           </a>
         </div>
       </div>
