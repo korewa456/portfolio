@@ -66,7 +66,10 @@ export default function Navbar({ scrollToSection }) {
                 <MenuItem item="Contact" />
               </li>
               <li>
-                <a href="https://portfolio-eta-seven-80.vercel.app/">
+                <a
+                  href="https://drive.google.com/file/d/1eiBVdB_r4oHKTHtrRVcde0m6VXt-hQbX/preview"
+                  target="_blank"
+                >
                   <MenuItem item="Resume" />
                 </a>
               </li>
