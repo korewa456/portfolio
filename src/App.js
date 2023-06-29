@@ -66,7 +66,9 @@ function App() {
       <Navbar scrollToSection={scrollToSection} />
       <motion.section
         ref={homeRef} // Add the ref assignment here
+        initial={{ opacity: 1, y: 0 }}
         animate={controls.home}
+        transition={{ duration: 0.5 }}
       >
         <Home />
       </motion.section>

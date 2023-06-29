@@ -65,6 +65,11 @@ export default function Navbar({ scrollToSection }) {
               <li onClick={() => scrollToSection("contact")}>
                 <MenuItem item="Contact" />
               </li>
+              <li>
+                <a href="https://portfolio-eta-seven-80.vercel.app/">
+                  <MenuItem item="Resume" />
+                </a>
+              </li>
             </ul>
           </div>
         </Container>
