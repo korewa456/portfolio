@@ -2,18 +2,12 @@ import React from "react";
 import airbnb from "../Media/preview/airbnbPreview.png";
 import LaunchIcon from "@mui/icons-material/Launch";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
-const Project = React.forwardRef((props, ref) => {
-  const airbnbStack = [
-    require("../Media/techstack/nextjslogo.svg"),
-    require("../Media/techstack/reactlogo.svg"),
-    require("../Media/techstack/tailwindlogo.svg"),
-    require("../Media/techstack/nodejslogo.svg"),
-    require("../Media/techstack/mongodblogo.svg"),
-  ];
-
+export default function Project(props) {
   return (
-    <article className="max-w-7xl mt-20 md:h-auto mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:place-items-center md:py-60 px-4">
+    <article className="max-w-7xl md:h-auto mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:place-items-center md:py-60 px-4">
       <div className="mb-3 flex flex-col justify-center items-center">
         <div className="flex flex-row gap-2 justify-start w-full p-5">
           {props.techStack.map((logo) => (
@@ -59,6 +53,4 @@ const Project = React.forwardRef((props, ref) => {
       </div>
     </article>
   );
-});
-
-export default Project;
+}

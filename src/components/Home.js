@@ -5,18 +5,18 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LogoData from "./LogoData";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
-const Home = React.forwardRef((props, ref) => {
+export default function Home(props) {
   return (
-    <section ref={ref} className="pt-24 bg-slate-100 w-full">
+    <section className="pt-24 bg-slate-100 w-full">
       <Container>
         <div className="flex flex-col md:flex-row justify-center items-center gap-6">
           <div className="flex justify-center flex-col gap-3">
             <h1 className="text-6xl font-semibold text-slate-700">
-              Front-End React
+              Fullstack React
             </h1>
             <h1 className="text-6xl font-semibold text-slate-700">Developer</h1>
             <h3 className="text-xl text-[#555]">
-              Hi, I'm Hung Jen. A passionate Front-end React
+              Hi, I'm Hung Jen. A passionate FullStack React
             </h3>
             <h3 className="text-xl text-[#555]">
               Developer based in Irvine, California. <LocationOnIcon />
@@ -55,6 +55,4 @@ const Home = React.forwardRef((props, ref) => {
       </Container>
     </section>
   );
-});
-
-export default Home;
+}

@@ -28,6 +28,19 @@ const LogoData = [
     demoLink: "https://fruitylips.vercel.app/",
     githubLink: "https://github.com/korewa456/Fruitylips",
   },
+  {
+    title: "Sorting Visualizer",
+    description:
+      "This is a web application that visualizes various sorting algorithms in action. The project is written in React and deployed to Firebase. There are five popular sorting algorithm to choose from, Merge Sort, Quick Sort, Bubble Sort, and finally Insertion sort.",
+    previewImage: require("../Media/preview/SortingVisualizerPreview.png"),
+    techStack: [
+      require("../Media/techstack/reactlogo.svg"),
+      require("../Media/techstack/htmllogo.svg"),
+      require("../Media/techstack/csslogo.svg"),
+    ],
+    demoLink: "https://sorting-visualizer-71b82.web.app/",
+    githubLink: "https://github.com/korewa456/sorting-visualizer",
+  },
 ];
 
 export default LogoData;

@@ -3,10 +3,26 @@ import Navbar from "./components/navbar/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import { useRef, useEffect } from "react";
-import ProjectPage from "./components/ProjectPage";
 import Contact from "./components/Contact";
 import Footer from "./components/footer";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, Variants, useInView } from "framer-motion";
+import Project from "./components/Project";
+import projectData from "./components/projectData";
+const cardVariants = {
+  offscreen: {
+    y: 300,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 1,
+    },
+  },
+};
 
 function App() {
   const homeRef = useRef(null);
@@ -15,87 +31,91 @@ function App() {
   const contactRef = useRef(null);
 
   const sectionRefs = {
-    home: homeRef,
-    about: aboutRef,
-    project: projectRef,
-    contact: contactRef,
+    home: { ref: homeRef },
+    about: { ref: aboutRef },
+    project: { ref: projectRef },
+    contact: { ref: contactRef },
   };
-
-  const controls = {
-    home: useAnimation(),
-    about: useAnimation(),
-    project: useAnimation(),
-    contact: useAnimation(),
-  };
-
-  const handleScroll = () => {
-    for (const section in sectionRefs) {
-      if (sectionRefs[section].current) {
-        const { top, bottom } =
-          sectionRefs[section].current.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        // Trigger animation when section is at least 50% visible
-        if (top < windowHeight * 0.5 && bottom > windowHeight * 0.5) {
-          controls[section].start({ opacity: 1, y: 0 });
-        } else {
-          controls[section].start({ opacity: 0, y: 20 });
-        }
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const scrollToSection = (refName) => {
-    if (sectionRefs[refName].current) {
+    const ref = sectionRefs[refName].ref.current;
+
+    if (ref) {
+      const rect = ref.getBoundingClientRect();
+      const scrollTop = document.documentElement.scrollTop;
+      const targetTop = rect.top + scrollTop - 80; // Adjust the offset as needed
+
       window.scrollTo({
-        top: sectionRefs[refName].current.offsetTop,
+        top: targetTop,
         behavior: "smooth",
       });
+    } else {
+      console.log(`Ref with name ${refName} not found or is null.`);
     }
   };
+
   return (
     <div className="App">
       <Navbar scrollToSection={scrollToSection} />
       <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
         ref={homeRef} // Add the ref assignment here
-        initial={{ opacity: 1, y: 0 }}
-        animate={controls.home}
-        transition={{ duration: 0.5 }}
       >
         <Home />
       </motion.section>
-      <motion.section
-        ref={aboutRef} // Add the ref assignment here
-        initial={{ opacity: 1, y: 0 }}
-        animate={controls.about}
-        transition={{ duration: 0.5 }}
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={cardVariants}
+        ref={aboutRef}
       >
         <About />
-      </motion.section>
-      <motion.section
-        ref={projectRef} // Add the ref assignment here
-        initial={{ opacity: 0, y: 20 }}
-        animate={controls.project}
-        transition={{ duration: 0.5 }}
+      </motion.div>
+
+      <div className="pt-20 bg-slate-100" ref={projectRef}>
+        <div className="flex justify-center">
+          <h2 className="bg-white px-2 text-slate-700 uppercase text-2xl font-bold inline-block rounded shadow">
+            My Projects
+          </h2>
+        </div>
+
+        {projectData.map((data) => (
+          <section
+          // Add the ref assignment here
+          >
+            <motion.div
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.5 }}
+              variants={cardVariants}
+            >
+              <Project
+                title={data.title}
+                description={data.description}
+                techStack={data.techStack}
+                previewImage={data.previewImage}
+                demoLink={data.demoLink}
+                githubLink={data.githubLink}
+              />
+            </motion.div>
+          </section>
+        ))}
+      </div>
+      <motion.div
+        ref={contactRef}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={cardVariants}
       >
-        <ProjectPage />
-      </motion.section>
-      <motion.section
-        ref={contactRef} // Add the ref assignment here
-        initial={{ opacity: 0, y: 20 }}
-        animate={controls.contact}
-        transition={{ duration: 0.5 }}
-      >
-        <Contact />
-      </motion.section>
+        <section>
+          <Contact />
+        </section>
+      </motion.div>
+
       <Footer />
     </div>
   );

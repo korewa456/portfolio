@@ -32,18 +32,26 @@ export default function Navbar({ scrollToSection }) {
                       : "transform -translate-x-full"
                   }`}
                 >
-                  <ul className="menu-items fixed top-0 left-0 w-full h-full bg-gray-200 flex flex-col items-center justify-center list-none">
-                    <li onClick={() => scrollToSection("homeRef")}>
+                  <ul className="menu-items fixed top-0 gap-6 left-0 w-full h-full bg-gray-200 flex flex-col items-center justify-center list-none">
+                    <li onClick={() => scrollToSection("home")}>
                       <MenuItem item="Home" />
                     </li>
-                    <li onClick={() => scrollToSection("aboutRef")}>
+                    <li onClick={() => scrollToSection("about")}>
                       <MenuItem item="About" />
                     </li>
-                    <li onClick={() => scrollToSection("projectRef")}>
+                    <li onClick={() => scrollToSection("project")}>
                       <MenuItem item="Project" />
                     </li>
-                    <li onClick={() => scrollToSection("contactRef")}>
+                    <li onClick={() => scrollToSection("contact")}>
                       <MenuItem item="Contact" />
+                    </li>
+                    <li>
+                      <a
+                        href="https://drive.google.com/file/d/1eiBVdB_r4oHKTHtrRVcde0m6VXt-hQbX/preview"
+                        target="_blank"
+                      >
+                        <MenuItem item="Resume" />
+                      </a>
                     </li>
                   </ul>
                 </div>
