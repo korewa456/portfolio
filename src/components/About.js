@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import porin from "../Media/cat/Porin.jpg";
-import ginTonic from "../Media/cat/Gin tonic.jpg";
+import ginTonic from "../Media/cat/Gin tonic.webp";
 
 export default function About() {
   const [curPic, setCurPic] = useState(porin);

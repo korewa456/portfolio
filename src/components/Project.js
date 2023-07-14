@@ -1,9 +1,6 @@
 import React from "react";
-import airbnb from "../Media/preview/airbnbPreview.png";
 import LaunchIcon from "@mui/icons-material/Launch";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 
 export default function Project(props) {
   return (
@@ -11,7 +8,7 @@ export default function Project(props) {
       <div className="mb-3 flex flex-col justify-center items-center">
         <div className="flex flex-row gap-2 justify-start w-full p-5">
           {props.techStack.map((logo) => (
-            <img src={logo.default} className="w-12 h-12" />
+            <img src={logo.default} alt="techStack" className="w-12 h-12" />
           ))}
         </div>
         <div class="relative">
