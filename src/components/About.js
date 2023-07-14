@@ -1,28 +1,12 @@
 import React, { useState } from "react";
-import ima from "../Media/pfp.webp";
 import porin from "../Media/cat/Porin.jpg";
 import ginTonic from "../Media/cat/Gin tonic.jpg";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 
 export default function About() {
   const [curPic, setCurPic] = useState(porin);
-  // const ref = useRef(null);
-  // const isInView = useInView(ref, {
-  //   once: true,
-  //   amount: 1,
-  // });
 
   return (
-    <section
-      className=" w-auto mb-12"
-      // ref={ref}
-      // style={{
-      //   transform: isInView ? "none" : "translateX(0px)",
-      //   opacity: isInView ? 1 : 0,
-      //   transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-      // }}
-    >
+    <section className=" w-auto mb-12">
       <div className="flex justify-center pt-20 mb-10">
         <h2 className="bg-slate-100 px-2 text-slate-700 uppercase tracking-wide text-2xl font-bold inline-block rounded shadow">
           ABOUT ME
@@ -56,7 +40,7 @@ export default function About() {
 
             <img
               src={curPic}
-              alt=""
+              alt="picture of cat"
               className="w-[50%] md:w-[20rem] lg:w-[25rem] md:h-[20rem] lg:h-[25rem] rounded-2xl"
             />
           </div>
@@ -68,7 +52,7 @@ export default function About() {
                 curPic === porin && "border-2 border-blue-400 opacity-80"
               } border-2 rounded-2xl cursor-pointer flex items-center justify-center`}
             >
-              <img src={porin} alt="" className="w-20" />
+              <img src={porin} alt="picture of cat porin" className="w-20" />
             </li>
             <li
               onClick={() => setCurPic(ginTonic)}
@@ -76,7 +60,7 @@ export default function About() {
                 curPic === ginTonic && "border-2 border-blue-400 opacity-80"
               } border-2 rounded-2xl cursor-pointer flex items-center justify-center`}
             >
-              <img src={ginTonic} alt="" className="w-20" />
+              <img src={ginTonic} alt="picture of gintonic" className="w-20" />
             </li>
           </ul>
         </article>

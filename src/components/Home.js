@@ -47,7 +47,11 @@ export default function Home(props) {
           <ul className="flex flex-wrap flex-row gap-3 justify-center items-center p-8">
             {LogoData.map((logo) => (
               <li className="flex justify-center items-center h-20 w-20 border-2 rounded-[50%] shadow-lg">
-                <img src={logo.default} className="h-12 w-12" />
+                <img
+                  src={logo.default}
+                  alt="logo of techstack"
+                  className="h-12 w-12"
+                />
               </li>
             ))}
           </ul>

@@ -1,6 +1,6 @@
 .hero-img {
   animation: morph 8s ease-in-out infinite;
-  background-image: url(/src/Media/IMG-0054.JPG);
+  background-image: url(/src/Media/IMG-0054.webp);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
